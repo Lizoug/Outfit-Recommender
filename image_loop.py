@@ -12,5 +12,5 @@ for filename in glob.glob('path/*.jpg'): #using * as a wildcard for the exact im
     # Construct the full file path by joining the folder path with the file name
 #since we used a wildcard for the filename, we don't need to construct the folder path anymore :)
     # Check if the file path is a file (and not a directory or symbolic link, etc.)
-    if os.path.isfile(file_path):
+   im=Image.open(filename) 
         onlyfiles.append(f)
