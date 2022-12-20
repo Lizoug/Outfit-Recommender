@@ -10,7 +10,7 @@ onlyfiles = []
 # Iterate over the files in the specified folder
 for filename in glob.glob('path/*.jpg'): #using * as a wildcard for the exact image name
     # Construct the full file path by joining the folder path with the file name
-    file_path = os.path.join(folder, f)
+#since we used a wildcard for the filename, we don't need to construct the folder path anymore :)
     # Check if the file path is a file (and not a directory or symbolic link, etc.)
     if os.path.isfile(file_path):
         onlyfiles.append(f)
