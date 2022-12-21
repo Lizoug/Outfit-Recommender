@@ -2,7 +2,6 @@ import os
 import glob
 from PIL import Image
 
-folder = "/Users/lizak/OneDrive/Desktop/myntradataset/images/"
 onlyfiles = []
 
 # Iterate over the files in the specified folder
