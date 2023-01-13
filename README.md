@@ -17,10 +17,10 @@ The model will be implemented using deep learning techniques such as convolution
 ## Usage
 The system can be used by using this system, users will be able to upload a photo of a clothing and receive outfit suggestions.
 
-## Dependencies
-Python 3.x
-TensorFlow 2.x or PyTorch
-OpenCV
-Numpy
+## Dependencies<br> 
+Python 3.x<br> 
+TensorFlow 2.x or PyTorch<br> 
+OpenCV<br> 
+Numpy<br> 
 Matplotlib
 
