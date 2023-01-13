@@ -24,3 +24,17 @@ The system can be used by using this system, users will be able to upload a phot
 * Numpy<br> 
 * Matplotlib
 
+## Installation
+To install the necessary dependencies, run the following command:<br>
+`pip install -r requirements.txt`
+
+## Note
+Please make sure you have a dataset before running the training and evaluation command.
+
+## Contribution
+Feel free to open a pull request or an issue if you have any suggestions for improvements.
+
+## Licence
+This project is licensed under the terms of the MIT license.
+
+
