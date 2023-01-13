@@ -1,12 +1,26 @@
-# *Outfit-Recommender*
+# *Outfit Recommendation System*
+## Introduction
+This project aims to develop an outfit recommendation system using deep learning techniques. The system will take an image of a person as input and suggest a suitable outfit for them.
 
-
-*In this project, we aim to develop an outfit recommendation system using deep learning techniques. The system will take an image from a user as input and suggest a suitable outfit for them. To train the model, we will be using a dataset of images of individuals wearing different outfits. The model will learn to recognize patterns and features in the images, allowing it to make accurate recommendations. By using this system, users will be able to upload a photo of themselves and receive personalized outfit suggestions
-
+## Data
+The model will be trained on a dataset of images.
 
 The dataset can be downloaded from Kaggle:
-https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset* 
+https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset
 
-## Setup 
+Or the smaller dataset:
+https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small
 
-### Dependencies
+## Model
+The model will be implemented using deep learning techniques such as convolutional neural networks (CNNs) and transfer learning. The CNNs will be used to extract features from the images and the final layers will be trained for the task of outfit recommendation.
+
+## Usage
+The system can be used by uploading an image of yourself, and the system will recommend a outfit for you
+
+## Dependencies
+Python 3.x
+TensorFlow 2.x or PyTorch
+OpenCV
+Numpy
+Matplotlib
+
