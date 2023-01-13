@@ -1,0 +1,7 @@
+os
+numpy 
+pandas
+Image
+glob2
+-U scikit-learn
+tensorflow
