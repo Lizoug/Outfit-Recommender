@@ -1,0 +1,16 @@
+import os
+import numpy as np 
+import pandas as pd
+from PIL import Image
+import glob
+from sklearn.model_selection import train_test_split
+from tensorflow import keras
+
+#path = os.getcwd()
+        
+path_csv = "/Users/lizak/OneDrive/Desktop/myntradataset"
+path_image = "/Users/lizak/OneDrive/Desktop/myntradataset/images/"
+
+print(os.listdir(path_csv))
+
+data = pd.read_csv(path_csv+"/styles.csv",error_bad_lines = False)
