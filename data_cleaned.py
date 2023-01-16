@@ -8,7 +8,7 @@ data= data.rename(columns={'id': 'image_id'})
 selected_lables = ['Shirts', 'Jeans', 'Track Pants', 'Tshirts', 'Casual Shoes', 'Tops',
                'Sandals', 'Sweatshirts', 'Formal Shoes', 'Waistcoat', 'Sports Shoes', 'Shorts', 
                'Heels', 'Innerwear Vests', 'Rain Jacket', 'Dresses', 'Skirts', 'Blazers',
-               'Shrug', 'Trousers', 'Jackets', 'Sports Sandals', 'Night suits', 'Sweaters', 'Tracksuits', 
+               'Shrug', 'Trousers', 'Jackets', 'Sports Sandals', 'Sweaters', 'Tracksuits', 
                'Leggings', 'Jumpsuit', 'Robe', 'Salwar and Dupatta', 'Kurtas', 'Sarees']
 
 #delete rows that are not in selected_lables
