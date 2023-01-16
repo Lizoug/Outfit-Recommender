@@ -1,6 +1,16 @@
 images = []
 lable_article = []
 def convert_image_to_array_endlist(path_image):
+    """ This function takes a single argument "path_image". 
+    Within the function, it uses the glob library to get 
+    all the jpg images in the given path, enumerates through them,
+    #extracts the image id from the filename, uses that id to find
+    the corresponding entry in a dataframe, opens the image using
+    the Image module and converts it to a numpy array. If the image
+    shape is (80,60,3) then it appends the image and the corresponding
+    article type to the 'images' and 'lable_article' lists respectively.
+    It returns the 'images' and 'lable_article' lists."""
+
     counter = 0
     
     for filename in enumerate(glob.glob(f'{path_image}*.jpg')): 
