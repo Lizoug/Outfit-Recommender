@@ -11,7 +11,6 @@ def convert_image_to_array_endlist(path_image):
     article type to the 'images' and 'lable_article' lists respectively.
     It returns the 'images' and 'lable_article' lists."""
 
-    counter = 0
     
     for filename in enumerate(glob.glob(f'{path_image}*.jpg')): 
 
