@@ -2,6 +2,7 @@ from data_cleaned import data
 import glob
 from PIL import Image
 import numpy as np 
+from import_data import path_image
 
 
 images = []
@@ -18,7 +19,7 @@ def convert_image_to_array_endlist(path_image):
     It returns the 'images' and 'lable_article' lists."""
 
     
-    for filename in enumerate(glob.glob(f'{path_image}*.jpg')): 
+    for i,filename in enumerate(glob.glob(f'{path_image}*.jpg')): 
 
     	# Extract the image id from the filename
         image_id = int(filename.split('\\')[-1].split('.')[0])
@@ -40,3 +41,5 @@ def convert_image_to_array_endlist(path_image):
             images.append(image)
 
     return images, lable_article
+
+convert_image_to_array_endlist(path_image)

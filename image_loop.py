@@ -1,5 +1,7 @@
 import glob
 from PIL import Image
+import os
+
 
 path = os.getcwd()
 onlyfiles = []
