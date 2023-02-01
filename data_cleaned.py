@@ -1,3 +1,5 @@
+from import_data import data
+
 #Github Issue clean data
 
 #drop columns that aren't relevant for the model training

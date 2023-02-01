@@ -1,8 +1,5 @@
 import os
-import numpy as np 
 import pandas as pd
-from PIL import Image
-import glob
 from sklearn.model_selection import train_test_split
 from tensorflow import keras
 
