@@ -7,12 +7,12 @@ import numpy as np
 
 #path = os.getcwd()
 
-def create_dataset():
-    # load data
-    path_csv = "/Users/lizak/OneDrive/Desktop/myntradataset"
-    path_image = "/Users/lizak/OneDrive/Desktop/myntradataset/images/"
-    
-    
+# load data
+path_csv = "/Users/lizak/OneDrive/Desktop/myntradataset"
+path_image = "/Users/lizak/OneDrive/Desktop/myntradataset/images/"
+
+def create_dataset(path_image, path_csv):
+
     data = pd.read_csv(path_csv+"/styles.csv",error_bad_lines = False)
     
     #Github Issue clean data
