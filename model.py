@@ -1,7 +1,8 @@
 import pandas as pd
 from tensorflow import keras
 import matplotlib.pyplot as plt
-from import_data import X_train, y_train
+from import_data 
+import X_train, y_train 
 
 def train_(X_train, y_train):
 
@@ -22,12 +23,10 @@ def train_(X_train, y_train):
     
     model.summary()
     
-    
     model.compile(optimizer='adam',
                   loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=['accuracy'])
     
     #only used 10 epochs for trial if code works
     history = model.fit(X_train, y_train, epochs=10)
-    
     
