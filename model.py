@@ -2,7 +2,7 @@ import pandas as pd
 from tensorflow import keras
 import matplotlib.pyplot as plt
 from import_data 
-import X_train, y_train 
+import X_train, X_test, y_train, y_test 
 
 def train_(X_train, y_train,X_test,y_test):
 
