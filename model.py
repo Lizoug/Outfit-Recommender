@@ -28,5 +28,5 @@ def train_(X_train, y_train):
                   metrics=['accuracy'])
     
     #only used 10 epochs for trial if code works
-    history = model.fit(X_train, y_train, epochs=10)
+    history = model.fit(X_train, y_train,validation_data = (X_test,y_test), epochs=10)
     
