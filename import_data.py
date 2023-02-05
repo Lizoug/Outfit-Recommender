@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from tensorflow import keras
-from feature_lable import lable_article, images
+from feature_lable_type import lable_article, images
 import numpy as np
 
 
