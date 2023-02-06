@@ -1,8 +1,7 @@
-os
 numpy 
 pandas
 Image
 glob2
--U scikit-learn
+scikit-learn
 tensorflow
 streamlit
