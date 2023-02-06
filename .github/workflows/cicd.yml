@@ -30,6 +30,6 @@ jobs:
           # stop the build if there are Python syntax errors or undefined names
           #the recursive statement gets all python files in the directory and all subdirectorys recursively
           pylint --recursive=y --ignore-paths=["venv"] --exit-zero .
-          
+      - name: Test with pytest  
         run: |
           pytest
