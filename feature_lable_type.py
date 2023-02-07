@@ -2,7 +2,7 @@ from data_cleaned import data
 import glob
 from PIL import Image
 import numpy as np 
-from import_data import path_image
+from import_data_type import path_image
 
 
 images = []
