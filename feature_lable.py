@@ -36,8 +36,8 @@ def convert_image_to_array_endlist(path_image):
         im = np.array(im)
 
         if im.shape == (80,60,3): 
-            colors_entry = entry_of_dataframe_with_correct_imageid.iloc[0,3]
-            lable_article.append(colors_entry)
+            only_entry_of_column_articleType = entry_of_dataframe_with_correct_imageid.iloc[0,2]
+            lable_article.append(only_entry_of_column_articleType)
             images.append(im)
 
     return images, lable_article
