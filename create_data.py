@@ -85,3 +85,12 @@ def convert_image_to_array_endlist(path_image, data):
             images.append(image)
 
     return images, lable_article
+
+if __name__ == '__main__':
+    #path = os.getcwd()
+    # load data
+    path_csv = "/Users/lizak/OneDrive/Desktop/myntradataset"
+    path_image = "/Users/lizak/OneDrive/Desktop/myntradataset/images/"
+    data = create_dataset(path_csv)
+    images, lable_article = convert_image_to_array_endlist(path_image, data)
+    X_train, X_test, y_train, y_test = train_test(path_image)
