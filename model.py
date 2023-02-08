@@ -1,11 +1,9 @@
 import pandas as pd
 from tensorflow import keras
 import matplotlib.pyplot as plt
-from import_data 
-import X_train, y_train 
-
-def train_(X_train, y_train):
-
+from import_data import X_train, y_train
+                         
+def train_CNN(X_train, y_train):
     #used dimensions of all used vectors except for batch size
     inputs = keras.Input(shape=X_train.shape[1:])
     #conv2D is convertional layer
