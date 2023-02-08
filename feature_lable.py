@@ -6,6 +6,7 @@ from import_data import path_image
 
 images = []
 lable_article = []
+lable_color = []
 
 def convert_image_to_array_endlist(path_image):
     """This function takes a single argument "path_image". 
@@ -37,7 +38,9 @@ def convert_image_to_array_endlist(path_image):
 
         if im.shape == (80,60,3): 
             colors_entry = entry_of_dataframe_with_correct_imageid.iloc[0,3]
-            lable_article.append(colors_entry)
+            articleType_entry = entry_of_dataframe_with_correct_imageid.iloc[0,2]
+            lable_article.append(articleType_entry)
+            lable_color.append(colors_entry)
             images.append(im)
 
     return images, lable_article
