@@ -28,3 +28,22 @@ def create_dataset(path_csv):
     
     data = data.dropna()
     return data 
+
+def train_test(path_image):
+    df = pd.DataFrame({"lable": lable_article})
+    lables_one_hot_encoded = pd.get_dummies(df['lable'])
+
+    images_to_numpy = np.array(images)
+
+    lables_one_hot_encoded_to_numpy = lables_one_hot_encoded.to_numpy()
+
+
+    #train-test-split
+    X_train, X_test, y_train, y_test = train_test_split(images_to_numpy,
+                                                        lables_one_hot_encoded_to_numpy,
+                                                        test_size=0.2,
+                                                        random_state=0, shuffle=True)
+
+    X_train, X_test = X_train / 255.0, X_test / 255.0
+    
+    return X_train, X_test, y_train, y_test
