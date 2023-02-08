@@ -1,9 +1,16 @@
 import pandas as pd
 from tensorflow import keras
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
 from import_data import X_train, y_train
                          
 def train_CNN(X_train, y_train):
+=======
+from import_data import X_train, X_test, y_train, y_test
+
+def train_(X_train, y_train,X_test,y_test):
+
+>>>>>>> fc096d6da094c6a231ec50383f8e621f30186835
     #used dimensions of all used vectors except for batch size
     inputs = keras.Input(shape=X_train.shape[1:])
     #conv2D is convertional layer
@@ -26,5 +33,5 @@ def train_CNN(X_train, y_train):
                   metrics=['accuracy'])
     
     #only used 10 epochs for trial if code works
-    history = model.fit(X_train, y_train, epochs=10)
+    history = model.fit(X_train, y_train,validation_data = (X_test,y_test), epochs=10)
     
