@@ -1,8 +1,8 @@
-from data_cleaned import data
 import glob
 from PIL import Image
 import numpy as np 
-from import_data import path_image
+from import_data import path_image, data
+
 
 images = []
 lable_article = []
@@ -42,4 +42,10 @@ def convert_image_to_array_endlist(path_image):
 
     return images, lable_article
 
+<<<<<<< HEAD:feature_lable.py
+if __name__ == '__main__':
+    images, lable_article = convert_image_to_array_endlist('path_to_your_images')
+
+=======
 convert_image_to_array_endlist(path_image)
+>>>>>>> fc096d6da094c6a231ec50383f8e621f30186835:feature_lable_color.py

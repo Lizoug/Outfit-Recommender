@@ -3,7 +3,7 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 from import_data import X_train, X_test, y_train, y_test
 
-def train_(X_train, y_train,X_test,y_test):
+def cnn_type(X_train, y_train,X_test,y_test):
 
     #used dimensions of all used vectors except for batch size
     inputs = keras.Input(shape=X_train.shape[1:])
