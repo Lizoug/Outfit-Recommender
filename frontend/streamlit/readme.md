@@ -7,7 +7,7 @@ Before running the code, please make sure you have fulfilled the requirements.
 
   To do so, run the following code in command prompt:<br>
 
-  pip install streamlit numpy pandas PIL time tensorflow os-sys
+  pip install streamlit numpy pandas PIL time tensorflow os-sys<br>
 
   (Please be informed that this does take awhile to complete)
 ***
@@ -22,16 +22,17 @@ Please follow these step by step otherwise it wont work the way its intended to.
 
 1. Create a dummy folder on your desktop
 
-2. Click the folder and left click to git bash into the folder 
+2. Click the folder and left click to git bash into the folder<br> 
    "Git Bash here"
 
-3. Clone this repository by running this code:
+3. Clone this repository by running this code:<br>
    git clone https://github.com/Lizoug/Outfit-Recommender.git
 
 4. You can now close the bash terminal and open the command prompt
 
-5. Enter the frontend directory by running this code :
-   cd Desktop/dummy_folder_name/Outfit-Recommender/frontend/streamlit
+5. Enter the frontend directory by running this code :<br>
+   cd Desktop/dummy_folder_name/Outfit-Recommender/frontend/streamlit<br>
+   (Remember to replace dummy_folder_name with your actual dummy folder name)
 
-6. Run our application website locally by running this code :
+6. Run our application website locally by running this code :<br>
    streamlit run draft.py
