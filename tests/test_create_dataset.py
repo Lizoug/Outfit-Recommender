@@ -25,4 +25,4 @@ def test_create_dataset():
     article_categories = ['Shirts', 'Jeans', 'Track Pants', 'Tshirts', 'Casual Shoes']
     color_names = ['Navy Blue', 'Blue', 'Silver', 'Black', 'Grey']
     assert set(result['articleType'].unique()).issubset(article_categories)
-    assert set(result['baseColour'].unique()).issubset(color_names)
+    assert set(result['baseColour'].unique()).issubset(color_names) 
