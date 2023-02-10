@@ -17,7 +17,7 @@ path_type = os.path.join(directory+"\Trained_for_Outfits3.h5")
 # path_color = os.path.join(directory+"\Trained_for_Outfits4.h5")
 model_type = tf.keras.models.load_model(path_type)
 # model_color = tf.keras.models.load_model(path_color)
-st.write("you are currently in your " + directory + "directory.")
+st.write("you are currently in your " + directory + " directory.")
 st.write("your current path is " + path_type + ".")
 # st.write(path_color)
 
@@ -95,7 +95,7 @@ if file_input is not None:
     st.write(f"PIL shape: {img.shape}")
 
     i = img[None, :]
-    p = model.predict(i)
+    p = model_type.predict(i)
     st.write(class_article[np.argmax(p[0])])
     st.write(np.argmax(p[0]))
     st.write(p[0])
@@ -118,7 +118,7 @@ elif camera_input is not None:
     st.write(f"PIL shape: {img.shape}")
 
     i = img[None, :]
-    p = model.predict(i)
+    p = model_type.predict(i)
     st.write(class_article[np.argmax(p[0])])
     st.write(np.argmax(p[0]))
     st.write(p[0])
