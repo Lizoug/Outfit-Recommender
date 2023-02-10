@@ -1,9 +1,9 @@
 import pandas as pd
 import sys
 import os
-import create_data
 path = os.getcwd()
 sys.path.insert(1, path + "//backend")
+import create_data
 
 
 def test_create_dataset():
