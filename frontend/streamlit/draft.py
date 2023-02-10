@@ -64,11 +64,12 @@ if st.session_state["photo"] == "done":
         else:
             st.image(file_input)
 st.write(camera_input)
-st.download_button(
-    label="Download image",
-    data=camera_input,
-    file_name="test_image.jpg"
-)
+if camera_input is not None:
+  st.download_button(
+      label="Download image",
+      data=camera_input,
+      file_name="test_image.jpg"
+  )
 st.write(type(camera_input))
 
 size = 256, 384
