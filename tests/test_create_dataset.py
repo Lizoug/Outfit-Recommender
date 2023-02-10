@@ -1,7 +1,9 @@
 import pandas as pd
 import  sys
 import pytest
-sys.path.insert(1, "C://Users//lizak//Data_Science//Semester_3//Data_Science_und_AI_Infrastrukturen//Outfit-Recommender//backend")
+import os
+path = os.getcwd()
+sys.path.insert(1, path + "//backend")
 import create_data
 
 def test_create_dataset():
