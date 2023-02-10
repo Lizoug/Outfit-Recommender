@@ -1,23 +1,31 @@
 import pandas as pd
 from tensorflow import keras
 import matplotlib.pyplot as plt
-from import_data import X_train, X_test, y_train, y_test
+from create_data import X_train, X_test, y_train, y_test
 
-def cnn_type(X_train, y_train,X_test,y_test):
-
-    #used dimensions of all used vectors except for batch size
+def cnn_clothing_type(X_train, y_train, X_test, y_test):
+    """trains a cnn to determine which type of clothing item is given into to neural network"""
+    
+    # all dimensions are used except for batch size
     inputs = keras.Input(shape=X_train.shape[1:])
-    #conv2D is convertional layer
-    #used rather small number for filters for trial if code works
+    # conv2D is convolutional layer
+    # in the convolutional layer, single attributed are recognized (like lines, edges or shapes)
+    # first number in brackets is the number of used neurons, the numbers in the next bracket define the kernel-size
     dense_layer = keras.layers.Conv2D(50, (3, 3), activation='relu')(inputs)
+    # in the maxpooling layer, the size of feature maps are reduced while the characteristic
+    # attributes are kept
+    # the numbers in the brackets define the pooling-window
     dense_layer = keras.layers.MaxPooling2D((2, 2))(dense_layer)
     dense_layer = keras.layers.Conv2D(50, (3, 3), activation='relu')(dense_layer)
     dense_layer = keras.layers.MaxPooling2D((2, 2))(dense_layer)
+    # in the flatten layer, high dimensional data is converted into one vector
     dense_layer = keras.layers.Flatten()(dense_layer)
+    # dense layers are used to learn high-level features from input data
+    # used for processing dense, flat input data like vectors
     dense_layer = keras.layers.Dense(50, activation='relu')(dense_layer)
-    #training on 30 output lables
+    # training on 30 output lables
     output_layer = keras.layers.Dense(30, activation="softmax")(dense_layer)
-    
+    # the model defines the neural network in keras and makes it ready for training and prediction
     model = keras.Model(inputs=inputs, outputs=output_layer, name="cifar_model_small")
     
     model.summary()
@@ -26,6 +34,8 @@ def cnn_type(X_train, y_train,X_test,y_test):
                   loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=['accuracy'])
     
-    #only used 10 epochs for trial if code works
-    history = model.fit(X_train, y_train,validation_data = (X_test,y_test), epochs=10)
+    # training of the model
+    history = model.fit(X_train, y_train,
+                        validation_data = (X_test,y_test), 
+                        epochs=10)
     
