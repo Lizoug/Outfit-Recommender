@@ -1,7 +1,6 @@
 Here's how you run the app locally from your PC:
 
 ***
-Please follow it step by step otherwise it wont work the way its intended to
 Before running the code, please make sure you have fulfilled the requirements.
 ***
 1. Python packages<br>
@@ -19,6 +18,7 @@ Before running the code, please make sure you have fulfilled the requirements.
   
   You can store this model either in Downloads or any other directory you choose, but make sure to open the directory before proceeding to next step.
 ***
+Please follow these step by step otherwise it wont work the way its intended to.<br>
 
 1. Create a dummy folder on your desktop
 
