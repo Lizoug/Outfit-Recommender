@@ -12,7 +12,7 @@ def create_dataset(path_csv):
     the categories"""
     
     # create dataframe, include only lines without errors
-    data = pd.read_csv(path_csv+"/styles.csv",error_bad_lines = False)
+    data = pd.read_csv(f'{path_csv}/styles.csv',error_bad_lines = False)
     # Drop columns not needed for analysis
     data = data.drop(['year','usage', 'productDisplayName', 'masterCategory', 'subCategory'], axis=1)
     # Rename the id column to image_id
