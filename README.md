@@ -32,6 +32,44 @@ The system can be used by using this system, users will be able to upload a phot
 To install the necessary dependencies, run the following command:<br>
 `pip install -r requirements.txt`
 
+## How to run the app locally
+
+Before running the code, please make sure you have fulfilled the requirements.
+***
+1. Python packages<br>
+
+  To do so, run the following code in command prompt:<br>
+
+  `pip install streamlit numpy pandas PIL time tensorflow os-sys`<br>
+
+  (Please be informed that this does take awhile to complete)
+***
+2. ML Model<br>
+  
+  To do so, download the model "Trained_for_Oufits3.h5" from the link https://drive.google.com/drive/folders/1jB56j4cuoUvT-hjP-97zoOobCjUQ6tx8<br>
+  (alternative link : https://zenodo.org/record/7617914#.Y-a6PXbMIuV)<br>
+  
+  You can store this model either in Downloads or any other directory you choose, but make sure to open the directory before proceeding to next step.
+***
+Please follow these step by step otherwise it wont work the way its intended to.<br>
+
+1. Create a dummy folder on your desktop
+
+2. Click the folder and left click to git bash into the folder<br> 
+   "Git Bash here"
+
+3. Clone this repository by running this code:<br>
+   `git clone https://github.com/Lizoug/Outfit-Recommender.git`
+
+4. You can now close the bash terminal and open the command prompt
+
+5. Enter the frontend directory by running this code :<br>
+   `cd Desktop/dummy_folder_name/Outfit-Recommender/frontend/streamlit`<br>
+   (Remember to replace dummy_folder_name with your actual dummy folder name)
+
+6. Run our application website locally by running this code :<br>
+   `streamlit run draft.py`
+
 ## Note
 Please make sure you have a dataset before running the training and evaluation command.
 
