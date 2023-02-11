@@ -60,7 +60,7 @@ def create_dataset(path_csv):
     return data
 
 
-def train_test(path_image, label_name):
+def train_test(path_image, label_data, label_name):
     """Convert images and one hot encoded labels to numpy arrays
     to create train and test datasets and normalize the values"""
 
@@ -69,11 +69,11 @@ def train_test(path_image, label_name):
 
     if label_name == "article":
         # Read in the article labels and perform one-hot encoding
-        df = pd.DataFrame({"label": lable_article})
+        df = pd.DataFrame({"label": label_data})
         one_hot_labels = pd.get_dummies(df['label'])
     elif label_name == "color":
         # Read in the color labels and perform one-hot encoding
-        df = pd.DataFrame({"label": lable_color})
+        df = pd.DataFrame({"label": label_data})
         one_hot_labels = pd.get_dummies(df['label'])
 
     # Convert the one hot encoded labels to numpy arrays
@@ -108,11 +108,14 @@ def convert_image_to_array_endlist(path_image, data, label_name):
 
         # Extract the image id from the filename
         image_id = int(filename.split('\\')[-1].split('.')[0])
+
         # Use the image id to find the corresponding entry dataframe
         df_entry_with_maching_image_id = data[data["image_id"] == image_id]
+
         # If the entry is empty, continue to the next iteration
         if df_entry_with_maching_image_id.empty:
             continue
+
         # Open the image using the Image module and convert it to a numpy array
         image = Image.open(filename)
         image = np.array(image)
@@ -138,5 +141,5 @@ if __name__ == '__main__':
                                                            data, "article")
     images, lable_color = convert_image_to_array_endlist(path_image,
                                                          data, "color")
-    X_train_article, X_test_article, y_train_article, y_test_article = train_test(path_image, "article")
-    X_train_color, X_test_color, y_train_color, y_test_color = train_test(path_image,"color")
+    X_train_article, X_test_article, y_train_article, y_test_article = train_test(images, lable_article, "article")
+    X_train_color, X_test_color, y_train_color, y_test_color = train_test(images, lable_color, "color")
