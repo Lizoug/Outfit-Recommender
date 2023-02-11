@@ -68,13 +68,18 @@ def train_test(path_image, label_name):
     one_hot_labels = None
 
     if label_name == "article":
+        # Read in the article labels and perform one-hot encoding
         df = pd.DataFrame({"label": lable_article})
         one_hot_labels = pd.get_dummies(df['label'])
     elif label_name == "color":
+        # Read in the color labels and perform one-hot encoding
         df = pd.DataFrame({"label": lable_color})
         one_hot_labels = pd.get_dummies(df['label'])
 
+    # Convert the one hot encoded labels to numpy arrays
     labels_np = one_hot_labels.to_numpy()
+
+    # train-test-split
     X_train, X_test, y_train, y_test = train_test_split(images_np,
                                                         labels_np,
                                                         test_size=0.2,
