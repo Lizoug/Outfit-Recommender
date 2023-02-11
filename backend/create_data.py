@@ -65,32 +65,22 @@ def train_test(path_image, label_name):
     to create train and test datasets and normalize the values"""
 
     images_np = np.array(images)
+    one_hot_labels = None
+
     if label_name == "article":
-        # Read in the article labels and perform one-hot encoding
-        df_article = pd.DataFrame({"lable": lable_article})
-        one_hot_labels = pd.get_dummies(df_article['lable'])
-        # Convert the one hot encoded labels to numpy arrays
-        lables_np = one_hot_labels.to_numpy()
-        # train-test-split
-        X_train, X_test, y_train, y_test = train_test_split(images_np,
-                                                            lables_np,
-                                                            test_size=0.2,
-                                                            random_state=0,
-                                                            shuffle=True)
+        df = pd.DataFrame({"label": lable_article})
+        one_hot_labels = pd.get_dummies(df['label'])
     elif label_name == "color":
-        # Read in the color labels and perform one-hot encoding
-        df_color = pd.DataFrame({"lable": lable_color})
-        one_hot_color = pd.get_dummies(df_color['lable'])
-        # Convert the one hot encoded colors to numpy arrays
-        color_np = one_hot_color.to_numpy()
-        # train-test-split
-        X_train, X_test, y_train, y_test = train_test_split(images_np,
-                                                            color_np,
-                                                            test_size=0.2,
-                                                            random_state=0,
-                                                            shuffle=True)
-    # Normalize the pixel values of the images
-    X_train, X_test, = X_train / 255.0, X_test / 255.0
+        df = pd.DataFrame({"label": lable_color})
+        one_hot_labels = pd.get_dummies(df['label'])
+
+    labels_np = one_hot_labels.to_numpy()
+    X_train, X_test, y_train, y_test = train_test_split(images_np,
+                                                        labels_np,
+                                                        test_size=0.2,
+                                                        random_state=0,
+                                                        shuffle=True)
+    X_train, X_test = X_train / 255.0, X_test / 255.0
     return X_train, X_test, y_train, y_test
 
 
