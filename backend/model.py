@@ -11,18 +11,22 @@ def cnn_clothing_type(X_train, y_train, X_test, y_test):
     # conv2D is convolutional layer
     # in the convolutional layer, single attributed are recognized (like lines, edges or shapes)
     # first number in brackets is the number of used neurons, the numbers in the next bracket define the kernel-size
-    dense_layer = keras.layers.Conv2D(50, (3, 3), activation='relu')(inputs)
+    dense_layer = keras.layers.Conv2D(64, (3, 3), activation='relu')(inputs)
     # in the maxpooling layer, the size of feature maps are reduced while the characteristic
     # attributes are kept
     # the numbers in the brackets define the pooling-window
     dense_layer = keras.layers.MaxPooling2D((2, 2))(dense_layer)
-    dense_layer = keras.layers.Conv2D(50, (3, 3), activation='relu')(dense_layer)
+    dense_layer = keras.layers.Conv2D(64, (3, 3), activation='relu')(dense_layer)
+    dense_layer = keras.layers.MaxPooling2D((2, 2))(dense_layer)
+    dense_layer = keras.layers.Conv2D(64, (3, 3), activation='relu')(dense_layer)
+    dense_layer = keras.layers.MaxPooling2D((2, 2))(dense_layer)
+    dense_layer = keras.layers.Conv2D(64, (3, 3), activation='relu')(dense_layer)
     dense_layer = keras.layers.MaxPooling2D((2, 2))(dense_layer)
     # in the flatten layer, high dimensional data is converted into one vector
     dense_layer = keras.layers.Flatten()(dense_layer)
     # dense layers are used to learn high-level features from input data
     # used for processing dense, flat input data like vectors
-    dense_layer = keras.layers.Dense(50, activation='relu')(dense_layer)
+    dense_layer = keras.layers.Dense(128, activation='relu')(dense_layer)
     # training on 30 output lables
     output_layer = keras.layers.Dense(30, activation="softmax")(dense_layer)
     # the model defines the neural network in keras and makes it ready for training and prediction
