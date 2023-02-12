@@ -8,7 +8,10 @@ import matplotlib.pyplot as plt
 # file = "D:/Ablage/3920.jpg"
 
 def predict(file):
+    #directory = os.getcwd()
     model = keras.models.load_model('../model/Trained_for_Outfits.h5')
+    
+    #model = keras.models.load_model(directory)
     
     size = 256, 384
     
