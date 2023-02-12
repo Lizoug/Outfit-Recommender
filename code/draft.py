@@ -8,18 +8,17 @@ import os
 import save
 import return_clothes
 
-
+# creates container for title
 title = st.container()
-dataset = st.container()
-user_interaction = st.container()
-model = st.container()
-junk = st.container()
 
+
+# Function for getting data and saving it to cache so user doesnt have to load it everytime
 @st.cache
 def get_data(filename):
   data = pd.read_csv(filename)
   return data
 
+# Columns for the website
 col1,col2,col3,col4,col5 = st.columns(5)
 
 clothing = None
@@ -31,6 +30,7 @@ if "photo" not in st.session_state:
 def change_photo_state():
     st.session_state["photo"]="done"
 
+# Title and Header
 with col3:
   with title:
     st.title("Outfit Recommender")
@@ -45,9 +45,11 @@ st.write("Please note the following before uploading your item")
 st.markdown("* The files need to be jpg files")
 st.markdown("* On the pictures the clothing should take the entire place")
 
+# Prompts user input
 file_input = st.file_uploader("Please upload a clothing item:", type="jpg", on_change=change_photo_state)
 camera_input = st.camera_input("Please take a photo!",on_change=change_photo_state)
 
+# Progress bar to illustrate progress
 progress_bar = st.progress(0)
 if st.session_state["photo"] == "done":
     for perc_completed in range(100):
@@ -61,12 +63,13 @@ if st.session_state["photo"] == "done":
         else:
             st.image(file_input)
 
-
+# Saves prediction in a csv
 if camera_input is not None:
     clothing, cloth_color = save.save_data(camera_input)
 if file_input is not None:
     clothing, cloth_color = save.save_data(file_input)
-    
+
+# Returns suggestions for clothing
 def get_clothes_for_list():
     return True
 
