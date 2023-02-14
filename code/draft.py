@@ -11,7 +11,6 @@ import return_clothes
 # creates container for title
 title = st.container()
 
-
 # Function for getting data and saving it to cache so user doesnt have to load it everytime
 @st.cache
 def get_data(filename):
