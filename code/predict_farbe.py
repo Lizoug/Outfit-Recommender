@@ -32,8 +32,7 @@ def predict(file:)
      'Skin', 'Burgundy', 'Grey Melange', 'Rust', 'Rose', 'Lime Green', 'Mauve',
      'Turquoise Blue', 'Metallic', 'Mustard', 'Taupe', 'Nude', 'Mushroom Brown',
      'Fluorescent Green']
-    
-    
+     
     print(class_names[np.argmax(p[0])])
     
     print(p.shape)
