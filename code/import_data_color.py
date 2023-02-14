@@ -4,13 +4,11 @@ from tensorflow import keras
 from feature_lable_color import lable_article, images
 import numpy as np
 
-
 # path = os.getcwd()
 
 # load data
 path_csv = "/Users/lizak/OneDrive/Desktop/myntradataset"
 path_image = "/Users/lizak/OneDrive/Desktop/myntradataset/images/"
-
 
 def create_dataset(path_image, path_csv):
 
@@ -100,6 +98,5 @@ def create_dataset(path_image, path_csv):
     X_train, X_test = X_train / 255.0, X_test / 255.0
 
     return X_train, X_test, y_train, y_test
-
 
 X_train, X_test, y_train, y_test = create_dataset(path_image, path_csv)
