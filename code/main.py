@@ -43,6 +43,7 @@ st.subheader("*Important*")
 st.write("Please note the following before uploading your item")
 st.markdown("* The files need to be jpg files")
 st.markdown("* On the pictures the clothing should take the entire place")
+st.button('converter','https://convertio.co/jpeg-jpg/','Convert your image format here!',15)
 
 # Prompts user input
 file_input = st.file_uploader("Please upload a clothing item:", type="jpg", on_change=change_photo_state)
