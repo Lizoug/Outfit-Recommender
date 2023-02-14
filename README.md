@@ -47,23 +47,27 @@ To install the necessary dependencies, run the following command:<br>
 
 ## How to run the app locally
 
-Before running the code, please make sure you have fulfilled the requirements.
+First be sure to have your image in .jpg format ready.<br>
+Convert it online with the following link :<br>
+https://convertio.co/jpeg-jpg/
 ***
-1. Python packages<br>
+### Requirements
+Before running the code, please make sure you have fulfilled the requirements.<br>
+1. Anaconda installed and Anaconda prompt ready<br>
+  
+  You can download Anaconda here :<br>
+  https://www.anaconda.com/
+  
+  
+2. Additional Python packages<br>
 
-  To do so, run the following code in command prompt:<br>
+  To do so, run the following code in Anaconda prompt:<br>
 
-  `pip install streamlit numpy pandas PIL time tensorflow os-sys`<br>
+  `pip install streamlit webcolors`<br>
 
   (Please be informed that this does take awhile to complete)
 ***
-2. ML Model<br>
-  
-  To do so, download the model "Trained_for_Oufits3.h5" from the link https://drive.google.com/drive/folders/1jB56j4cuoUvT-hjP-97zoOobCjUQ6tx8<br>
-  (alternative link : https://zenodo.org/record/7617914#.Y-a6PXbMIuV)<br>
-  
-  You can store this model either in Downloads or any other directory you choose, but make sure to open the directory before proceeding to next step.
-***
+### Manual
 Please follow these step by step otherwise it wont work the way its intended to.<br>
 
 1. Create a dummy folder on your desktop
@@ -74,14 +78,22 @@ Please follow these step by step otherwise it wont work the way its intended to.
 3. Clone this repository by running this code:<br>
    `git clone https://github.com/Lizoug/Outfit-Recommender.git`
 
-4. You can now close the bash terminal and open the command prompt
+4. You can now close the bash terminal and open Anaconda prompt
 
 5. Enter the frontend directory by running this code :<br>
-   `cd Desktop/dummy_folder_name/Outfit-Recommender/frontend/streamlit`<br>
+   `cd Desktop/dummy_folder_name/Outfit-Recommender`<br>
    (Remember to replace dummy_folder_name with your actual dummy folder name)
 
-6. Run our application website locally by running this code :<br>
-   `streamlit run draft.py`
+6. If you haven't already, install requirements with the following code :<br>
+   `pip install -r requirements.txt`<br>
+   (This will take awhile and you may see some errors but it should still work fine)
+   
+7. Enter the code directory with the following code : <br>
+   `cd code`<br>
+   
+8. Run the code :<br>
+   `streamlit run main.py`<br>
+   (The website should be launched from your browser with the given IP Address)
 
 ## Note
 Please make sure you have a dataset before running the training and evaluation command.
