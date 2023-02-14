@@ -1,9 +1,11 @@
 # *Outfit Recommendation System*
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.github/workflows/my first ci](https://github.com/Lizoug/Outfit-Recommender/actions/workflows/my_first_ci.yaml/badge.svg)](https://github.com/Lizoug/Outfit-Recommender/actions/workflows/my_first_ci.yaml)
+
+
 
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-[![.github/workflows/my first ci](https://github.com/Lizoug/Outfit-Recommender/actions/workflows/my_first_ci.yaml/badge.svg)](https://github.com/Lizoug/Outfit-Recommender/actions/workflows/my_first_ci.yaml)
+
 
 ## Introduction
 This project aims to develop an outfit recommendation system using deep learning techniques. The system will take an image from the user as input and suggest a suitable outfit for them. The model will learn to recognize patterns and features in the images, allowing it to make accurate recommendations. 
