@@ -57,7 +57,6 @@ def rgb_to_color_name(r, g, b):
 
     return nearest_color_name
 
-
 def get_color(file):
     rl = np.zeros([90, 96])
     gl = np.zeros([90, 96])
