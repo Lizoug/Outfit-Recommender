@@ -5,7 +5,6 @@ import glob
 from PIL import Image
 from sklearn.model_selection import train_test_split
 
-
 def create_dataset(path_csv):
     """clean data by dropping columns not needed and filtering
     the categories"""
@@ -59,7 +58,6 @@ def create_dataset(path_csv):
     data = data.dropna()
     return data
 
-
 def train_test(path_image, label_data, label_name):
     """Convert images and one hot encoded labels to numpy arrays
     to create train and test datasets and normalize the values"""
@@ -89,10 +87,8 @@ def train_test(path_image, label_data, label_name):
     X_train, X_test = X_train / 255.0, X_test / 255.0
     return X_train, X_test, y_train, y_test
 
-
 images = []
 lable_list = []
-
 
 def convert_image_to_array_endlist(path_image, data, label_name):
     """ This function takes the arguments "path_image" and data,
@@ -129,7 +125,6 @@ def convert_image_to_array_endlist(path_image, data, label_name):
                 lable_list.append(colors_entry)
             images.append(image)
     return images, lable_list
-
 
 if __name__ == '__main__':
     root = os.getcwd()
