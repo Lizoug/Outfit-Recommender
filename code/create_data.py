@@ -31,9 +31,9 @@ def create_dataset(path_csv):
                           'Leggings', 'Jumpsuit', 'Robe',
                           'Salwar and Dupatta', 'Kurtas', 'Sarees']
     # List of colors
-    """ For future color prediction purposes. At the moment, we are only using 
-        article categories (clothing types) in our modell-
-        For color prediction, we are using the color entries of the csv data at the moment"""
+    # For future color prediction purposes. At the moment, we are only using 
+    # article categories (clothing types) in our modell
+    # For color prediction, we are using the color entries of the csv data at the moment"""
     color_names = ['Navy Blue', 'Blue', 'Silver',
                    'Black', 'Grey', 'Green',
                    'Purple', 'White', 'Beige',
@@ -50,8 +50,8 @@ def create_dataset(path_csv):
                    'Metallic', 'Mustard', 'Taupe',
                    'Nude', 'Mushroom Brown', 'Fluorescent Green']
 
-    """ Filter the data to only include entries where
-        articleType is in article_categories"""
+    # Filter the data to only include entries where
+    # articleType is in article_categories
     data = data.loc[data["articleType"].isin(article_categories)]
 
     # Delete rows that are not in color_names
