@@ -1,6 +1,5 @@
 from tensorflow import keras
 
-
 def cnn_clothing_type(X_train, y_train, X_test, y_test):
     """trains a cnn to determine which type of clothing
     item is given into to neural network"""
