@@ -75,7 +75,6 @@ def train_test(path_image, label_data, label_name):
         # Read in the color labels and perform one-hot encoding
         df = pd.DataFrame({"label": label_data})
         one_hot_labels = pd.get_dummies(df['label'])
-        
 
     # Convert the one hot encoded labels to numpy arrays
     labels_np = one_hot_labels.to_numpy()
