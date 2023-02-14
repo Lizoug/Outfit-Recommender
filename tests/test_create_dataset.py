@@ -5,7 +5,6 @@ path = os.getcwd()
 sys.path.insert(1, path + "//backend")
 import create_data
 
-
 def test_create_dataset():
     path_csv = "test.csv"
     test_df = pd.DataFrame({'id': [1, 2, 3, 4],
