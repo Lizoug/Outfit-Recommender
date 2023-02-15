@@ -1,10 +1,6 @@
-
-
-from webcolors import rgb_to_name
-import numpy as np 
-import os
+import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
+
 
 def rgb_to_color_name(r, g, b):
     """ Gets what color the rgb values are"""
@@ -45,7 +41,7 @@ def rgb_to_color_name(r, g, b):
     }
 
     # Find the most similar color of table list
-    # Set a float variable 
+    # Set a float variable
     min_distance = float("inf")
     most_similar_color = None
     # Redo for every color in color_names
@@ -59,6 +55,7 @@ def rgb_to_color_name(r, g, b):
 
     return nearest_color_name
 
+
 def get_color(file):
     """ Gets the RGB value of clothes and derives theis color"""
     # sets arrays for RGBs we want to get
@@ -66,8 +63,8 @@ def get_color(file):
     gl = np.zeros([90, 96])
     bl = np.zeros([90, 96])
     # Set the sizes for our IMAGE
-    size = 256, 384 
-    
+    size = 256, 384
+
     # Load the image
     image = Image.open(file)
     # Resize the image
@@ -75,20 +72,20 @@ def get_color(file):
     # Convert image to numpy array
     img = np.array(new_image)
     # chooses the coordinates in the image, where we want to get the RGB values from
-    img = img[70:160,80:-80]
-    
+    img = img[70:160, 80:-80]
+
     # gets separate lists for R, G and B
-    for i in range(0,90):
-        for j in range(0,90):
+    for i in range(0, 90):
+        for j in range(0, 90):
                 rl[i][j] = img[i][j][0]
                 gl[i][j] = img[i][j][1]
                 bl[i][j] = img[i][j][2]
-                
+
     # Calculates the mean to get only one last number for each list
     r = int(np.mean(rl))
     g = int(np.mean(gl))
     b = int(np.mean(bl))
-    
+
     # Gets what color the rgb values are
-    color = rgb_to_color_name(r,g,b)
+    color = rgb_to_color_name(r, g, b)
     return color
