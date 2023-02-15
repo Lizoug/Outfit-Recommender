@@ -1,5 +1,6 @@
 from tensorflow import keras
 
+
 def cnn_clothing_type(X_train, y_train, X_test, y_test):
     """ Trains a cnn to determine which type of clothing
         item is given into to neural network"""
@@ -32,7 +33,7 @@ def cnn_clothing_type(X_train, y_train, X_test, y_test):
     output_layer = keras.layers.Dense(30, activation="softmax")(dense_layer)
 
     # the model defines the neural network in keras and makes it ready for training and prediction
-    model = keras.Model(inputs=inputs, outputs=output_layer, name="cifar_model_small")
+    model = keras.Model(inputs=inputs, outputs=output_layer, name="OR_model")
 
     model.summary()
 
@@ -41,6 +42,6 @@ def cnn_clothing_type(X_train, y_train, X_test, y_test):
                   metrics=['accuracy'])
 
     # training of the model
-    history = model.fit(X_train, y_train,
-                        validation_data=(X_test, y_test),
-                        epochs=10)
+    model.fit(X_train, y_train,
+              validation_data=(X_test, y_test),
+              epochs=10)
