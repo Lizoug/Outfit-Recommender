@@ -53,7 +53,7 @@ def rgb_to_color_name(r, g, b):
             most_similarity = similarity
             most_similar_color = color_item
 
-    return nearest_color_name
+    return most_similar_color
 
 
 def get_color(file):
