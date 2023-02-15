@@ -1,12 +1,3 @@
-append later:
--only use jpeg, there is a link on the website
--don't worry about the error messages you get while installing, the programm should work never the less
--on the webpage, click "browse photo" to select a photo (jpeg) from your computer
--click [..] to get photo analyzed
-
--change description, so that user knows which steps to perform (and which not) to use the programm
-
-
 # *Outfit Recommendation System*
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.github/workflows/my first ci](https://github.com/Lizoug/Outfit-Recommender/actions/workflows/my_first_ci.yaml/badge.svg)](https://github.com/Lizoug/Outfit-Recommender/actions/workflows/my_first_ci.yaml)
 
