@@ -7,7 +7,7 @@ def predict(file):
     """ Prediction of the clothing items of the images."""
 
     # Loading the model from keras
-    model = keras.models.load_model('../model/Trained_for_Outfits.h5')
+    model = keras.models.load_model("../model/Trained_for_Outfits.h5")
 
     # Set the sizes for our prediction
     size = 256, 384
@@ -24,14 +24,14 @@ def predict(file):
     # Return predictions for image
     p = model.predict(i)
 
-    class_names = ['Blazers', 'Casual Shoes', 'Dresses',
-                   'Formal Shoes', 'Heels', 'Innerwear Vests',
-                   'Jackets', 'Jeans', 'Jumpsuit', 'Kurtas',
-                   'Leggings', 'Rain Jacket', 'Robe',
-                   'Salwar and Dupatta', 'Sandals', 'Sarees',
-                   'Shirts', 'Shorts', 'Shrug', 'Skirts',
-                   'Sports Sandals', 'Sports Shoes', 'Sweaters',
-                   'Sweatshirts', 'Tops', 'Track Pants', 'Tracksuits',
-                   'Trousers', 'Tshirts', 'Waistcoat']
+    class_names = ["Blazers", "Casual Shoes", "Dresses",
+                   "Formal Shoes", "Heels", "Innerwear Vests",
+                   "Jackets", "Jeans", "Jumpsuit", "Kurtas",
+                   "Leggings", "Rain Jacket", "Robe",
+                   "Salwar and Dupatta", "Sandals", "Sarees",
+                   "Shirts", "Shorts", "Shrug", "Skirts",
+                   "Sports Sandals", "Sports Shoes", "Sweaters",
+                   "Sweatshirts", "Tops", "Track Pants", "Tracksuits",
+                   "Trousers", "Tshirts", "Waistcoat"]
     # Returns the value which was predicted with class_names
     return class_names[np.argmax(p[0])]
