@@ -9,7 +9,7 @@ def predict(file):
         are not predicting colors at the moment"""
 
     # Loading the model from keras
-    model = keras.models.load_model('../model/color_model.h5')
+    model = keras.models.load_model("../model/color_model.h5")
 
     # Set the sizes for our prediction
     size = 60, 80
@@ -26,15 +26,15 @@ def predict(file):
     # Return predictions for image
     p = model.predict(i)
 
-    class_names = ['Navy Blue', 'Blue', 'Silver', 'Black', 'Grey', 'Green',
-                   'Purple', 'White', 'Beige', 'Brown', 'Bronze', 'Teal',
-                   'Copper', 'Pink', 'Off White', 'Maroon', 'Red', 'Khaki',
-                   'Orange', 'Coffee Brown', 'Yellow', 'Charcoal', 'Gold',
-                   'Steel', 'Tan', 'Multi', 'Magenta', 'Lavender', 'Sea Green',
-                   'Cream', 'Peach', 'Olive', 'Skin', 'Burgundy',
-                   'Grey Melange', 'Rust', 'Rose', 'Lime Green', 'Mauve',
-                   'Turquoise Blue', 'Metallic', 'Mustard', 'Taupe', 'Nude',
-                   'Mushroom Brown', 'Fluorescent Green']
+    class_names = ["Navy Blue", "Blue", "Silver", "Black", "Grey", "Green",
+                   "Purple", "White", "Beige", "Brown", "Bronze", "Teal",
+                   "Copper", "Pink", "Off White", "Maroon", "Red", "Khaki",
+                   "Orange", "Coffee Brown", "Yellow", "Charcoal", "Gold",
+                   "Steel", "Tan", "Multi", "Magenta", "Lavender", "Sea Green",
+                   "Cream", "Peach", "Olive", "Skin", "Burgundy",
+                   "Grey Melange", "Rust", "Rose", "Lime Green", "Mauve",
+                   "Turquoise Blue", "Metallic", "Mustard", "Taupe", "Nude",
+                   "Mushroom Brown", "Fluorescent Green"]
 
     # Returns the value
     return class_names[np.argmax(p[0])]
