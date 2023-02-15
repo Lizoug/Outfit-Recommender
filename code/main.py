@@ -1,15 +1,12 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
-from PIL import Image
 import time
-import tensorflow as tf
-import os
 import save
 import return_clothes
 
 # creates container for title
 title = st.container()
+
 
 # Function for getting data and saving it to cache so user doesnt have to load it everytime
 @st.cache
@@ -17,17 +14,20 @@ def get_data(filename):
   data = pd.read_csv(filename)
   return data
 
+
 # Columns for the website
-col1,col2,col3,col4,col5 = st.columns(5)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 clothing = None
 clothes_l = False
 
 if "photo" not in st.session_state:
-    st.session_state["photo"]="not done"
+    st.session_state["photo"] = "not done"
+
 
 def change_photo_state():
-    st.session_state["photo"]="done"
+    st.session_state["photo"] = "done"
+
 
 # Title and Header
 with col3:
@@ -36,7 +36,7 @@ with col3:
 
 with col1:
     st.title("Introduction")
-   
+
 st.write("This project aims to develop an outfit recommendation system using deep learning techniques. The system will take an image from the user as input and suggest a suitable outfit for them. The model will learn to recognize patterns and features in the images, allowing it to make accurate recommendations.")
 
 st.subheader("*Important*")
@@ -46,8 +46,10 @@ st.markdown("* On the pictures the clothing should take the entire place")
 st.write("Convert your image [here](https://convertio.co/)")
 
 # Prompts user input
-file_input = st.file_uploader("Please upload a clothing item:", type="jpg", on_change=change_photo_state)
-camera_input = st.camera_input("Please take a photo!",on_change=change_photo_state)
+file_input = st.file_uploader("Please upload a clothing item:",
+                              type="jpg", on_change=change_photo_state)
+camera_input = st.camera_input("Please take a photo!",
+                               on_change=change_photo_state)
 
 # Progress bar to illustrate progress
 progress_bar = st.progress(0)
@@ -69,15 +71,19 @@ if camera_input is not None:
 if file_input is not None:
     clothing, cloth_color = save.save_data(file_input)
 
+
 # Returns suggestions for clothing
 def get_clothes_for_list():
     return True
+
 
 if clothing is not None:
     if cloth_color is not None:
         st.write(clothing)
         st.write(cloth_color)
-        clothes_l = st.button(label="return fitting clothes", on_click=get_clothes_for_list, type="secondary", disabled=False) 
+        clothes_l = st.button(label="return fitting clothes",
+                              on_click=get_clothes_for_list,
+                              type="secondary", disabled=False)
 
 if clothes_l:
     clothes_list = return_clothes.get_clothes(clothing, cloth_color)
