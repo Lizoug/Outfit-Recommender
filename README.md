@@ -30,7 +30,8 @@ The system can be used by using this system, users will be able to upload a phot
 * TensorFlow 2.x or PyTorch<br> 
 * OpenCV<br> 
 * Numpy<br> 
-* Matplotlib
+* Pandas<br>
+* Glob
 
 ## Installation
 To install the necessary dependencies, run the following command:<br>
