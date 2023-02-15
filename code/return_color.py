@@ -42,7 +42,7 @@ def rgb_to_color_name(r, g, b):
 
     # Find the most similar color of table list
     # Set a float variable
-    min_distance = float("inf")
+    most_similarity = float("inf")
     most_similar_color = None
     # Redo for every color in color_names
     for rgb_value, color_item in color_list.items():
@@ -53,7 +53,7 @@ def rgb_to_color_name(r, g, b):
             most_similarity = similarity
             most_similar_color = color_item
 
-    return nearest_color_name
+    return most_similar_color 
 
 
 def get_color(file):
