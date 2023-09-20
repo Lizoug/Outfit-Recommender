@@ -20,7 +20,7 @@ Or the smaller dataset:<br>
 https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-small
 
 ## Model
-The model will be implemented using deep learning techniques such as convolutional neural networks (CNNs). The CNNs will be used to extract features from the images and the final layers will be trained for the task of outfit recommendation.
+The model will be implemented using machine learning and deep learning techniques such as convolutional neural networks (CNNs). The CNNs will be used to extract features from the images and the final layers will be trained for the task of outfit recommendation.
 
 ## Usage
 The system can be used by using this system, users will be able to upload a photo of a clothing and receive outfit suggestions.
